@@ -1,0 +1,551 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>馨络智康 - 双心疾病五音芳疗的开拓者</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 配置 Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6', // 蓝色作为主色调，代表信任和专业
+                        secondary: '#8B5CF6',  // 紫色作为副标题色，区分层次
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            }
+            .content-auto {
+                content-visibility: auto;
+            }
+            .btn-primary {
+                @apply bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+            }
+            .btn-secondary {
+                @apply bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-all duration-300;
+            }
+            .bg-gradient-primary {
+                background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="#home" class="text-primary font-bold text-2xl flex items-center">
+                        <i class="fa fa-heartbeat mr-2"></i>
+                        <span>馨络智康</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary transition-colors font-medium">首页</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary transition-colors font-medium">服务</a>
+                    <a href="#assessment" class="text-gray-700 hover:text-primary transition-colors font-medium">心理评估</a>
+                    <a href="#dashboard" class="text-gray-700 hover:text-primary transition-colors font-medium">个人健康</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-primary transition-colors font-medium">用户评价</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors font-medium">联系我们</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-primary transition-colors">首页</a>
+                <a href="#services" class="block py-2 text-gray-700 hover:text-primary transition-colors">服务</a>
+                <a href="#assessment" class="block py-2 text-gray-700 hover:text-primary transition-colors">心理评估</a>
+                <a href="#dashboard" class="block py-2 text-gray-700 hover:text-primary transition-colors">个人健康</a>
+                <a href="#testimonials" class="block py-2 text-gray-700 hover:text-primary transition-colors">用户评价</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-primary transition-colors">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800 py-24 md:py-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-8">
+                    <h1 class="text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-tight mb-4">
+                        馨络智康
+                    </h1>
+                    <h2 class="text-[clamp(1.3rem,3vw,1.8rem)] font-medium text-gray-700 mb-6 max-w-xl">
+                        ——双心疾病五音芳疗的开拓者
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 max-w-xl">
+                        以专业心理评估为基础，结合传统五音疗法与现代芳疗技术，为您提供身心同治的健康管理方案
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#assessment" class="bg-primary text-white px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex items-center">
+                            <i class="fa fa-user-md mr-2"></i> 立即心理评估
+                        </a>
+                        <a href="#services" class="bg-white text-primary border border-primary px-6 py-3 rounded-full font-medium hover:bg-gray-50 transition-all duration-300 flex items-center">
+                            <i class="fa fa-info-circle mr-2"></i> 了解服务详情
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <!-- 删除了右上角和左下角的浮动元素，只保留图片 -->
+                    <div class="bg-white p-2 rounded-xl shadow-xl overflow-hidden">
+                        <img src="https://picsum.photos/seed/healthcare/600/400" alt="心理健康服务" class="rounded-lg w-full max-w-lg mx-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务介绍 -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">核心服务</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">以心理为主导，心脏为辅助，科学专业的身心共治方案</p>
+                <div class="w-20 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 服务卡片 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-primary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-brain text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">心理状态评估</h3>
+                    <p class="text-gray-600 mb-4">通过专业量表与AI分析，全面评估焦虑、抑郁、压力等心理指标，生成个性化健康报告</p>
+                    <a href="#assessment" class="text-primary font-medium inline-flex items-center">
+                        查看详情 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- 服务卡片 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-secondary transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-music text-secondary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">五音芳疗干预</h3>
+                    <p class="text-gray-600 mb-4">结合宫商角徵羽五音疗法与植物芳香疗法，调节自主神经，改善心脏功能与情绪状态</p>
+                    <a href="#dashboard" class="text-secondary font-medium inline-flex items-center">
+                        查看详情 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- 服务卡片 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-heartbeat text-purple-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">心脏健康监测</h3>
+                    <p class="text-gray-600 mb-4">提供心率变异性（HRV）监测与分析，评估心理压力对心脏的影响，制定针对性干预方案</p>
+                    <a href="#dashboard" class="text-purple-500 font-medium inline-flex items-center">
+                        查看详情 <i class="fa fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 心理评估 -->
+    <section id="assessment" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-primary text-white p-8 md:p-12 flex flex-col justify-center">
+                        <h2 class="text-[clamp(1.5rem,3vw,2.2rem)] font-bold text-shadow mb-4">专业心理评估</h2>
+                        <p class="text-white/90 mb-6">由心理学专家团队研发的评估体系，通过科学量表与AI分析，精准定位心理状态</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle mt-1 mr-3 text-secondary"></i>
+                                <span>涵盖焦虑、抑郁、压力、睡眠等12个心理维度评估</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle mt-1 mr-3 text-secondary"></i>
+                                <span>基于30万+案例的AI模型，评估准确率达92%</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle mt-1 mr-3 text-secondary"></i>
+                                <span>生成可视化健康报告与个性化干预建议</span>
+                            </li>
+                        </ul>
+                        <a href="#assessment" class="btn-primary w-full max-w-xs self-start">
+                            开始评估
+                        </a>
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <img src="https://picsum.photos/seed/assessment/500/400" alt="心理评估" class="w-full h-auto rounded-lg shadow-md mb-6">
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">焦虑自评量表 (SAS)</h3>
+                                <p class="text-gray-600 text-sm">评估焦虑症状的严重程度，帮助识别焦虑相关问题，10-15分钟完成</p>
+                                <a href="#" class="text-primary text-sm font-medium mt-2 inline-block">
+                                    了解详情 <i class="fa fa-angle-right ml-1"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">抑郁自评量表 (SDS)</h3>
+                                <p class="text-gray-600 text-sm">评估抑郁症状的严重程度，筛查可能的抑郁倾向，15-20分钟完成</p>
+                                <a href="#" class="text-primary text-sm font-medium mt-2 inline-block">
+                                    了解详情 <i class="fa fa-angle-right ml-1"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">压力评估量表 (PSS)</h3>
+                                <p class="text-gray-600 text-sm">评估生活中的压力水平和应对能力，了解压力来源，8-12分钟完成</p>
+                                <a href="#" class="text-primary text-sm font-medium mt-2 inline-block">
+                                    了解详情 <i class="fa fa-angle-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 个人健康仪表盘（简化展示） -->
+    <section id="dashboard" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">个人健康管理</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">实时追踪身心状态，科学管理健康数据</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 rounded-xl p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">健康数据概览</h3>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <p class="text-sm text-gray-500">心理状态</p>
+                            <p class="text-2xl font-bold text-primary">良好</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <p class="text-sm text-gray-500">压力指数</p>
+                            <p class="text-2xl font-bold text-yellow-500">3.2/5</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <p class="text-sm text-gray-500">睡眠质量</p>
+                            <p class="text-2xl font-bold text-blue-500">良好</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <p class="text-sm text-gray-500">心率变异性</p>
+                            <p class="text-2xl font-bold text-green-500">正常</p>
+                        </div>
+                    </div>
+                    <a href="#" class="text-primary font-medium inline-flex items-center">
+                        查看详细报告 <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="bg-gray-50 rounded-xl p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">健康建议</h3>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+                        <h4 class="font-medium text-gray-900 mb-2">五音芳疗建议</h4>
+                        <p class="text-sm text-gray-600">建议今日聆听角调式音乐30分钟，搭配薰衣草精油香薰，帮助缓解压力，调节情绪。</p>
+                    </div>
+                    <div class="bg-green-50 border-l-4 border-green-500 p-4">
+                        <h4 class="font-medium text-gray-900 mb-2">运动建议</h4>
+                        <p class="text-sm text-gray-600">推荐进行15分钟冥想呼吸练习和轻度有氧运动，如瑜伽或快走，改善身心连接。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价 -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-4">用户反馈</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">来自真实用户的身心共治体验分享</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 评价卡片 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
+                    <div class="text-yellow-400 flex mb-4">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"通过五音芳疗和心理评估的结合，我明显感觉到压力缓解了很多，睡眠质量也得到了改善，感谢馨络智康的专业服务！"</p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/user1/64/64" alt="用户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="text-sm font-medium text-gray-900">王女士</h4>
+                            <p class="text-xs text-gray-500">使用服务6个月</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 评价卡片 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
+                    <div class="text-yellow-400 flex mb-4">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"作为一名心脏疾病患者，我很担心心理压力对心脏的影响，馨络智康的双心共治方案让我找到了身心平衡的方法。"</p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/user2/64/64" alt="用户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="text-sm font-medium text-gray-900">李先生</h4>
+                            <p class="text-xs text-gray-500">使用服务3个月</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 评价卡片 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
+                    <div class="text-yellow-400 flex mb-4">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6">"心理评估非常专业，报告详细全面，五音芳疗的效果超出预期，每次治疗后都感到身心舒畅。"</p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/seed/user3/64/64" alt="用户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="text-sm font-medium text-gray-900">张先生</h4>
+                            <p class="text-xs text-gray-500">使用服务2个月</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-gray-900 mb-6">联系我们</h2>
+                    <p class="text-gray-600 mb-8">如果您有任何疑问或需要了解更多关于我们的服务，请随时联系我们，我们的专业团队将为您提供帮助。</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fa fa-map-marker text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">地址</h3>
+                                <p class="text-gray-600">北京市朝阳区健康路88号馨络智康中心</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fa fa-phone text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">电话</h3>
+                                <p class="text-gray-600">400-123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                    <i class="fa fa-envelope text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-gray-900">邮箱</h3>
+                                <p class="text-gray-600">contact@xinluozhikang.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">关注我们</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-weixin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-qq"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">预约咨询</h3>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">姓名</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" placeholder="请输入您的姓名">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">电话</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" placeholder="请输入您的电话">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">邮箱</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" placeholder="请输入您的邮箱">
+                            </div>
+                            <div class="mb-6">
+                                <label for="service" class="block text-sm font-medium text-gray-700 mb-2">服务类型</label>
+                                <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors">
+                                    <option value="">请选择服务类型</option>
+                                    <option value="psychological">心理评估</option>
+                                    <option value="music">五音芳疗</option>
+                                    <option value="heart">心脏健康监测</option>
+                                    <option value="other">其他服务</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">留言</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" placeholder="请输入您的留言或问题"></textarea>
+                            </div>
+                            <div class="mb-6">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="form-checkbox text-primary h-5 w-5">
+                                    <span class="ml-2 text-sm text-gray-600">我同意接收馨络智康的健康资讯和服务通知</span>
+                                </label>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                                提交预约
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="#home" class="text-white font-bold text-2xl flex items-center mb-4">
+                        <i class="fa fa-heartbeat mr-2"></i>
+                        <span>馨络智康</span>
+                    </a>
+                    <p class="text-gray-400 text-sm">倾心遇康，守护您的身心安康</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">服务</a></li>
+                        <li><a href="#assessment" class="text-gray-400 hover:text-white transition-colors">心理评估</a></li>
+                        <li><a href="#dashboard" class="text-gray-400 hover:text-white transition-colors">个人健康</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">用户评价</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">服务项目</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">心理状态评估</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">五音芳疗干预</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">心脏健康监测</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">心理咨询服务</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">健康管理计划</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">联系我们</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fa fa-map-marker w-5 text-gray-400"></i>
+                            <span class="ml-2 text-gray-400">北京市朝阳区健康路88号馨络智康中心</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone w-5 text-gray-400"></i>
+                            <span class="ml-2 text-gray-400">400-123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope w-5 text-gray-400"></i>
+                            <span class="ml-2 text-gray-400">contact@xinluozhikang.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex justify-between items-center">
+                    <p class="text-gray-400 text-sm">© 2025 馨络智康. 保留所有权利.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-qq"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-md');
+                navbar.classList.remove('bg-white/90');
+            } else {
+                navbar.classList.remove('bg-white', 'shadow-md');
+                navbar.classList.add('bg-white/90');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动端菜单
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
